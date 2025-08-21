@@ -1,161 +1,161 @@
 # ⚽ Scoreboard App
 
-Um placar esportivo minimalista e intuitivo desenvolvido com React Native e Expo.
+A minimalist and intuitive sports scoreboard developed with React Native and Expo.
 
-## 📝 Resumo do Projeto
+## 📝 Project Overview
 
-O **Scoreboard App** é um aplicativo de placar esportivo com interface dividida (azul/vermelha) que permite controlar pontuações através de gestos intuitivos. Inclui timer integrado, suporte a orientações múltiplas e funciona perfeitamente em dispositivos iOS e Android.
+The **Scoreboard App** is a sports scoreboard application with a split interface (blue/red) that allows you to control scores through intuitive gestures. It includes an integrated timer, support for multiple orientations, and works perfectly on iOS and Android devices.
 
-**Ideal para:** Esportes, competições, apresentações, eventos ou qualquer atividade que precise de um placar simples e eficiente.
+**Perfect for:** Sports, competitions, presentations, events, or any activity that needs a simple and efficient scoreboard.
 
-## 🎯 Funcionalidades
+## 🎯 Features
 
-- **Tela dividida** azul/vermelha para dois times
-- **Gestos intuitivos**:
-  - Toque nas laterais para aumentar pontuação
-  - Swipe para baixo para diminuir pontuação
-- **Timer integrado** com controles play/pause/stop/reset
-- **Modal colapsável** para o timer
-- **Orientação responsiva** (portrait/landscape)
-- **Tela sempre ligada** durante o uso
+- **Split screen** blue/red for two teams
+- **Intuitive gestures**:
+  - Tap on sides to increase score
+  - Swipe down to decrease score
+- **Integrated timer** with play/pause/stop/reset controls
+- **Collapsible modal** for the timer
+- **Responsive orientation** (portrait/landscape)
+- **Keep screen awake** during use
 
-## 🛠️ Pré-requisitos
+## 🛠️ Prerequisites
 
-Antes de instalar o projeto, certifique-se de ter:
+Before installing the project, make sure you have:
 
-- **Node.js** (versão 18 ou superior)
-- **npm** ou **yarn**
-- **Expo CLI** (opcional, mas recomendado)
+- **Node.js** (version 18 or higher)
+- **npm** or **yarn**
+- **Expo CLI** (optional, but recommended)
 
-### Para desenvolvimento iOS:
-- **macOS** (obrigatório para builds nativos)
-- **Xcode** (versão mais recente)
-- **iOS Simulator** ou dispositivo físico
-- **Conta Apple Developer** (para instalação em dispositivo físico)
+### For iOS development:
+- **macOS** (required for native builds)
+- **Xcode** (latest version)
+- **iOS Simulator** or physical device
+- **Apple Developer Account** (for installation on physical device)
 
-### Para teste rápido em iOS:
-- **Expo Go** no iPhone (disponível na App Store)
-- **Mesma rede Wi-Fi** (dispositivo e computador)
+### For quick iOS testing:
+- **Expo Go** on iPhone (available in the App Store)
+- **Same Wi-Fi network** (device and computer)
 
-## 🚀 Instalação
+## 🚀 Installation
 
-### 1. Clone e instale dependências
+### 1. Clone and install dependencies
 ```bash
-# Clone o repositório
-git clone <url-do-repositorio>
+# Clone the repository
+git clone <repository-url>
 cd scoreboard
 
-# Instale as dependências
+# Install dependencies
 npm install
 
-# Inicie o servidor de desenvolvimento
+# Start the development server
 npm start
 ```
 
-### 2. Executar no iOS
+### 2. Run on iOS
 
-#### Opção A: Via Expo Go (Mais Simples)
+#### Option A: Via Expo Go (Simplest)
 ```bash
-# Inicie o projeto
+# Start the project
 npm start
 
-# No iPhone:
-# 1. Baixe o Expo Go na App Store
-# 2. Escaneie o QR code que aparece no terminal
-# 3. O app abre automaticamente
+# On iPhone:
+# 1. Download Expo Go from the App Store
+# 2. Scan the QR code that appears in the terminal
+# 3. The app opens automatically
 ```
 
-#### Opção B: iOS Simulator (Requer macOS)
+#### Option B: iOS Simulator (Requires macOS)
 ```bash
-# Instale o iOS Simulator
+# Install iOS Simulator
 npm run ios
 
-# Ou especifique um simulador
+# Or specify a simulator
 npx expo run:ios --simulator="iPhone 15"
 ```
 
-#### Opção C: Build Nativo (Para distribuição)
+#### Option C: Native Build (For distribution)
 ```bash
-# Instale EAS CLI
-npm install -g @expo/eas-cli
+# Install EAS CLI
+npm install -g eas-cli
 
-# Configure o projeto
+# Configure the project
 eas build:configure
 
-# Crie build para iOS
+# Create iOS build
 eas build --platform ios --profile preview
 ```
 
-## 💡 Instalação Rápida para iOS
+## 💡 Quick iOS Installation
 
-**Para usar imediatamente no iPhone:**
+**To use immediately on iPhone:**
 
-1. **Baixe o Expo Go** na App Store
-2. **Execute** `npm start` no computador
-3. **Escaneie** o QR code com a câmera do iPhone
-4. **Pronto!** O app abre no Expo Go
+1. **Download Expo Go** from the App Store
+2. **Run** `npm start` on computer
+3. **Scan** the QR code with iPhone camera
+4. **Done!** The app opens in Expo Go
 
-**Para instalação permanente:**
-- Necessária conta Apple Developer ($99/ano)
-- Build através do EAS Build Service
+**For permanent installation:**
+- Requires Apple Developer account ($99/year)
+- Build through EAS Build Service
 
-##  Controles
+## 🎮 Controls
 
-- **Aumentar pontos**: Toque na lateral do time
-- **Diminuir pontos**: Swipe para baixo na lateral do time
-- **Timer**: Toque no modal para expandir/recolher
-- **Reset geral**: Botão ↻ no timer expandido
+- **Increase points**: Tap on team's side
+- **Decrease points**: Swipe down on team's side
+- **Timer**: Tap on modal to expand/collapse
+- **General reset**: ↻ button in expanded timer
 
-## 🏗️ Arquitetura
+## 🏗️ Architecture
 
-### Estrutura do projeto
+### Project structure
 ```
 ├── app/
-│   ├── index.tsx          # Tela principal
-│   ├── _layout.tsx        # Layout raiz
-│   └── +not-found.tsx     # Página 404
+│   ├── index.tsx          # Main screen
+│   ├── _layout.tsx        # Root layout
+│   └── +not-found.tsx     # 404 page
 ├── components/
-│   ├── ScoreDisplay.tsx   # Exibição de pontuação
-│   ├── TimerModal.tsx     # Modal do timer
-│   └── TimerControls.tsx  # Controles do timer
+│   ├── ScoreDisplay.tsx   # Score display
+│   ├── TimerModal.tsx     # Timer modal
+│   └── TimerControls.tsx  # Timer controls
 ├── hooks/
-│   ├── useStopwatch.ts    # Hook do cronômetro
-│   ├── useOrientation.ts  # Hook de orientação
-│   ├── useScoreGestures.ts# Hook de gestos
-│   └── useScreenSettings.ts# Hook de configurações
+│   ├── useStopwatch.ts    # Stopwatch hook
+│   ├── useOrientation.ts  # Orientation hook
+│   ├── useScoreGestures.ts# Gesture hook
+│   └── useScreenSettings.ts# Settings hook
 └── styles/
-    └── styles.ts          # Estilos centralizados
+    └── styles.ts          # Centralized styles
 ```
 
-### Tecnologias utilizadas
-- **React Native** - Framework mobile
-- **Expo** - Plataforma de desenvolvimento
-- **TypeScript** - Tipagem estática
-- **Custom Hooks** - Lógica reutilizável
-- **PanResponder** - Gestos nativos
+### Technologies used
+- **React Native** - Mobile framework
+- **Expo** - Development platform
+- **TypeScript** - Static typing
+- **Custom Hooks** - Reusable logic
+- **PanResponder** - Native gestures
 
 ## 🎨 Design
 
-- **Minimalista**: Interface limpa sem elementos desnecessários
-- **Responsivo**: Adapta-se a diferentes orientações
-- **Intuitivo**: Controles gestuais naturais
-- **Acessível**: Ícones Unicode universais
+- **Minimalist**: Clean interface without unnecessary elements
+- **Responsive**: Adapts to different orientations
+- **Intuitive**: Natural gesture controls
+- **Accessible**: Universal Unicode icons
 
-## 📦 Dependências principais
+## 📦 Main Dependencies
 
-- `expo-keep-awake` - Manter tela ligada
-- `expo-screen-orientation` - Controle de orientação
-- `react-native-safe-area-context` - Áreas seguras do dispositivo
+- `expo-keep-awake` - Keep screen awake
+- `expo-screen-orientation` - Orientation control
+- `react-native-safe-area-context` - Device safe areas
 
-## 🛠️ Desenvolvimento
+## 🛠️ Development
 
-O projeto segue as melhores práticas:
-- **Separação de responsabilidades** com hooks customizados
-- **Componentes reutilizáveis** e modulares
-- **Estilos centralizados** para consistência
-- **TypeScript** para type safety
-- **Código limpo** e bem documentado
+The project follows best practices:
+- **Separation of concerns** with custom hooks
+- **Reusable and modular** components
+- **Centralized styles** for consistency
+- **TypeScript** for type safety
+- **Clean and well-documented** code
 
 ---
 
-Desenvolvido com ❤️ usando React Native e Expo
+Developed with ❤️ using React Native and Expo
