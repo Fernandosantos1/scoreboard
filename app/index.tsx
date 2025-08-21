@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ScoreDisplay } from '../components/ScoreDisplay';
 import { TimerModal } from '../components/TimerModal';
 import { useOrientation } from '../hooks/useOrientation';
-import { useScoreGestures } from '../hooks/useScoreGestures';
 import { useScreenSettings } from '../hooks/useScreenSettings';
 import { useStopwatch } from '../hooks/useStopwatch';
 import { styles } from '../styles/styles';
@@ -21,14 +20,6 @@ export default function ScoreboardScreen() {
   const { time, isRunning, startPause, reset, formatTime } = useStopwatch();
   const { dimensions, isLandscape } = useOrientation();
   useScreenSettings();
-  
-  const panResponder = useScoreGestures({
-    dimensions,
-    blueScore,
-    redScore,
-    setBlueScore,
-    setRedScore
-  });
 
   const resetAll = () => {
     setBlueScore(0);
@@ -41,14 +32,13 @@ export default function ScoreboardScreen() {
       <StatusBar style="light" />
       
       {/* Tela principal do placar */}
-      <View 
-        style={[styles.gameArea, { flexDirection: 'row' }]} 
-        {...panResponder.panHandlers}
-      >
+      <View style={[styles.gameArea, { flexDirection: 'row' }]}>
         <ScoreDisplay
           blueScore={blueScore}
           redScore={redScore}
           isLandscape={isLandscape}
+          setBlueScore={setBlueScore}
+          setRedScore={setRedScore}
         />
       </View>
       

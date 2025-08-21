@@ -25,7 +25,7 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
         style={styles.controlButtonMinimal}
       >
         <Text style={styles.controlIconMinimal}>
-          {isRunning ? '⏸' : '▶'}
+          {isRunning ? '||' : '▷'}
         </Text>
       </TouchableOpacity>
       
@@ -36,7 +36,7 @@ export const TimerControls: React.FC<TimerControlsProps> = ({
         }} 
         style={styles.controlButtonMinimal}
       >
-        <Text style={styles.controlIconMinimal}>■</Text>
+        <Text style={styles.controlIconMinimal}>◼</Text>
       </TouchableOpacity>
       
       <TouchableOpacity 

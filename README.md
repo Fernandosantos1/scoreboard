@@ -37,12 +37,28 @@ Before installing the project, make sure you have:
 - **Expo Go** on iPhone (available in the App Store)
 - **Same Wi-Fi network** (device and computer)
 
-## 🚀 Installation
+## 🚀 Installation & Usage
 
-### 1. Clone and install dependencies
+### 📱 **Quick Start (Recommended - No PC Required)**
+
+**Use the app immediately on your iPhone without any setup:**
+
+1. **Download Expo Go** from the App Store
+2. **Open this link** on your iPhone: https://expo.dev/accounts/slabrx/projects/scoreboard
+3. **Scan the QR code** or tap "Open project using Expo Go"
+4. **Done!** The app works independently from any computer
+
+**Direct link for Expo Go:**
+```
+exp://u.expo.dev/78abfbe9-b2d3-4510-947f-703a3f4aea12?channel-name=production
+```
+
+### 🛠️ **Development Setup (For Developers)**
+
+#### Option A: Local Development
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Fernandosantos1/scoreboard.git
 cd scoreboard
 
 # Install dependencies
@@ -52,52 +68,41 @@ npm install
 npm start
 ```
 
-### 2. Run on iOS
-
-#### Option A: Via Expo Go (Simplest)
+#### Option B: Deploy Updates to Cloud
 ```bash
-# Start the project
-npm start
-
-# On iPhone:
-# 1. Download Expo Go from the App Store
-# 2. Scan the QR code that appears in the terminal
-# 3. The app opens automatically
+# Update the live app
+eas update --branch production --message "Your update message"
 ```
 
-#### Option B: iOS Simulator (Requires macOS)
-```bash
-# Install iOS Simulator
-npm run ios
+## 📱 **Installation Options**
 
-# Or specify a simulator
-npx expo run:ios --simulator="iPhone 15"
+### **1. Expo Go (Recommended - Free & Easy)**
+- ✅ **No Apple Developer account needed**
+- ✅ **Works immediately**
+- ✅ **No PC required after first setup**
+- ✅ **Automatic updates**
+
+### **2. Native App (Requires Apple Developer $99/year)**
+```bash
+# For physical device installation
+eas build --platform ios --profile production
+eas submit --platform ios
 ```
 
-#### Option C: Native Build (For distribution)
+### **3. TestFlight (With Apple Developer)**
 ```bash
-# Install EAS CLI
-npm install -g eas-cli
-
-# Configure the project
-eas build:configure
-
-# Create iOS build
+# For beta testing
 eas build --platform ios --profile preview
+eas submit --platform ios --auto-submit
 ```
 
-## 💡 Quick iOS Installation
+## 🔗 **Live App Access**
 
-**To use immediately on iPhone:**
+The app is deployed and ready to use:
 
-1. **Download Expo Go** from the App Store
-2. **Run** `npm start` on computer
-3. **Scan** the QR code with iPhone camera
-4. **Done!** The app opens in Expo Go
-
-**For permanent installation:**
-- Requires Apple Developer account ($99/year)
-- Build through EAS Build Service
+- **📱 Direct Access**: https://expo.dev/accounts/slabrx/projects/scoreboard
+- **🔗 Expo Go Link**: `exp://u.expo.dev/78abfbe9-b2d3-4510-947f-703a3f4aea12?channel-name=production`
+- **📊 EAS Dashboard**: https://expo.dev/accounts/slabrx/projects/scoreboard
 
 ## 🎮 Controls
 
@@ -149,12 +154,38 @@ eas build --platform ios --profile preview
 
 ## 🛠️ Development
 
+### **Updating the Live App**
+```bash
+# Make your changes, then deploy
+eas update --branch production --message "Your update description"
+```
+
+### **Project Structure**
 The project follows best practices:
 - **Separation of concerns** with custom hooks
 - **Reusable and modular** components
 - **Centralized styles** for consistency
 - **TypeScript** for type safety
 - **Clean and well-documented** code
+
+### **EAS Configuration**
+- **Project ID**: 78abfbe9-b2d3-4510-947f-703a3f4aea12
+- **Account**: @slabrx/scoreboard
+- **Runtime Version**: 1.0.0
+- **Update Branch**: production
+
+---
+
+## 📝 **Quick Access Summary**
+
+**🎯 For Users:**
+- Download Expo Go → Open https://expo.dev/accounts/slabrx/projects/scoreboard
+
+**🛠️ For Developers:**
+- Clone repo → `npm install` → `npm start` → Deploy with `eas update`
+
+**📱 Current Live Version:**
+- Available at: exp://u.expo.dev/78abfbe9-b2d3-4510-947f-703a3f4aea12?channel-name=production
 
 ---
 
